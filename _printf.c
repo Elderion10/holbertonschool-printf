@@ -12,11 +12,12 @@ int _printf(const char *format, ...)
 	int sum;
 	int (*f)(va_list);
 	va_list argumentos;
+	i = 0;
 
 	sum = 0;
 	va_start(argumentos, format);
 
-		if (format == NULL)
+		if (format == NULL || !format[i + 1])
 		{
 			return (-1);
 		}
