@@ -1,42 +1,51 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-int _printf(const char *format, ...);
 /**
- * _printf - blabla
- * @format: pointer
- * Return: the number of characters
+ * _printf - prints depending of the format
+ *@format: the const variable to initialize
+ *Return: sum
  */
 int _printf(const char *format, ...)
 {
-	const char *a;
-	va_list lista;
+	int i;
 	int sum;
-	char *s;
-	unsigned int i;
+	int (*f)(va_list);
+	va_list argumentos;
 
 	sum = 0;
+	va_start(argumentos, format);
 
-	if (!format)
-	{
-		return (-1);
-	}
-
-	va_start(lista, format);
-	for (a = format; *a != '\0'; a++)
-	{
-		if(s = va_arg(lista, char *)
-				puts(s);
-
-		if ("%c")
-			_putchar(i);
-
-		if ("%")
-			_putchar('%');
-
-		sum += va_arg(lista, int);
-	}
-
-	va_end(lista);
-	return (sum);
+		if (format == NULL)
+		{
+			return (-1);
+		}
+		for (i = 0; format[i] != '\0'; i++)
+		{
+			if (format[i] == '%')
+			{
+				if (format[i + 1])
+				{
+					if (format[i + 1] != 'c' && format[i + 1] != 's'
+							&& format[i + 1] != '%')
+					{
+						sum += _putchar(format[i]);
+						sum += _putchar(format[i + 1]);
+					}
+					else
+					{
+						f = get_func(&format[i + 1]);
+						f(argumentos);
+						i++;
+					}
+				}
+			}
+			else
+			{
+				_putchar(format[i]);
+				sum++;
+			}
+		}
+		va_end(argumentos);
+		return (sum);
 }
