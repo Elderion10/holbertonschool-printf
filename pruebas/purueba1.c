@@ -35,4 +35,31 @@ int _printf(const char *format, ...)
 					}
 					else
 					{
-						f =
+						f = get_func(&format[i + 1]);
+						f(argumentos);
+						i++;
+					}
+				}
+			}
+			else
+			{
+				_putchar(format[i]);
+				sum++;
+			}
+		}
+		va_end(argumentos);
+		return (sum);
+}
+
+
+void main(void)
+{
+	char *s;
+	char x, i;
+	s = "Yahuri";
+	x = 'z';
+
+	_putchar('h');
+	_putchar('\n');
+	_printf("Hola soy %s y tengo %c\n", s, x);
+}
