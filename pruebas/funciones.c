@@ -5,32 +5,28 @@
  * print_character - prints a char
  * @c: variable 
  */
-int print_character(int c)
+int print_char(va_list argumentos)
 {
-	char i;
-	_putchar(i);
+	_putchar(va_arg(argumentos, int));
+	return (1);
 }
 
-/**
- * print_string - prints a string
- * @s: contains the string
- */
-int print_string(int *s)
+int print_str(va_list argumentos)
 {
-	puts;
+	int a;
+	char *str;
+
+	str = va_arg(argumentos, char *);
+
+	for (a = 0; str[a]; a++)
+	{
+		_putchar(str[a]);
+	}
+	return (a);
 }
 
-/**
- * int use_modull - use the modull
- * @m: contains the modull
- */
-int use_modull(int m)
+int print_modulo(va_list argumentos)
 {
-	int i;
-	char *s;
-
-	for (i = 0; s[i] != NULL; i++);
-
-	if (i == %)
-		return (i + 1);
+	(void)argumentos;
+	return (write(1, "%", 1));
 }
