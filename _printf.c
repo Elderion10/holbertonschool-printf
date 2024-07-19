@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 							&& format[i + 1] != '%')
 					{
 						sum += _putchar(format[i]);
-						sum += _putchar(format[i + 1]);
+						
 					}
 					else
 					{
