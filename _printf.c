@@ -32,8 +32,6 @@ int _printf(const char *format, ...)
 					}
 					else
 					{
-						if (f == NULL)
-							_putchar(format[i]);
 						f = get_func(&format[i + 1]);
 						sum += f(argumentos);
 						i++;
