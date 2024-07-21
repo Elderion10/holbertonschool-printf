@@ -27,4 +27,6 @@ int print_modulo(va_list argumentos);
 
 int (*get_func(const char *format))(va_list);
 
+int print_int_digit(va_list argumentos);
+
 #endif

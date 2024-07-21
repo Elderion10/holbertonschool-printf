@@ -13,6 +13,8 @@ int (*get_func(const char *s))(va_list)
 		{"c", print_char},
 		{"s", print_str},
 		{"%", print_modulo},
+		{"d", print_int_digit},
+		{"i", print_int_digit},
 		{NULL, NULL}
 	};
 
