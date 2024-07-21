@@ -25,6 +25,8 @@ int print_str(va_list argumentos)
 
 	str = va_arg(argumentos, char *);
 
+	if (str == NULL)
+		str = "(null)";
 	for (a = 0; str[a]; a++)
 	{
 		_putchar(str[a]);
