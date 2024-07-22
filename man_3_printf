@@ -1,0 +1,41 @@
+.TH man_3_printf "21 Julio, 2024" "version 0.01"
+
+.SH NAME
+.B _printf
+- a copy of the function printf.
+
+.SH SYNOPSIS
+_printf(const char *format, ...)
+
+.SH FORMAT OF THE FORMAT STRING
+Format - is a character string.
+
+.TP
+The sting is composed of zero of more directives: normal chars (not %), which are copied to the output stream; and conversion specifiers, each of which results in a search of zero or more arguments.
+
+.SH DESCRIPTION
+The function produces output according to a format. We handle the conversion specifiers described in OPTIONS.
+
+.SH OPTIONS
+We mange the conversion specifiers:
+.br
+.B %c
+- Prints a chracter.
+.br
+.B %s
+- Prints a sting.
+.br
+.B %d
+- Prints a number in decimal.
+.br
+.B %i
+- Prints a number as a integer.
+
+.SH RETURN VALUES
+The number of characters printed (except for the null byte used to end output to strings). Write output to stdout, the standart output stream.
+
+.SH SEE ALSO
+printf(3)
+
+.SH AUTHOR
+Yahuri Aponte
